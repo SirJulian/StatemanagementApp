@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
           OrdersScreen.routeName: (ctx)=> OrdersScreen(),
           UserProductsScreen.routeNamed: (ctx) => UserProductsScreen(),
           EditProductScreen.routeName: (ctx) => EditProductScreen(),
-          Foody1Page1.routeName: (ctx) => Foody1Page1(),
+          Foody1Page1.routeName: (ctx) => Foody1Page1(),          
         },
       ),
     );
