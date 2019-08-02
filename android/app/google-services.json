@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "986527940755",
+    "firebase_url": "https://agorinha.firebaseio.com",
+    "project_id": "agorinha",
+    "storage_bucket": "agorinha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986527940755:android:4f2d4e93750b553a",
+        "android_client_info": {
+          "package_name": "com.example.laranjeiras2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986527940755-mthots8via9niufca5mlajotpiamgu3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1K9Luy4x1Jyn5kPoEceJx5HdjuhrysUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986527940755-mthots8via9niufca5mlajotpiamgu3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986527940755:android:fc8b7965eb25b6a3",
+        "android_client_info": {
+          "package_name": "com.example.statemanage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986527940755-mthots8via9niufca5mlajotpiamgu3m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1K9Luy4x1Jyn5kPoEceJx5HdjuhrysUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986527940755-mthots8via9niufca5mlajotpiamgu3m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
