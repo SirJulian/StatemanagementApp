@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:statemanage/providers/cart.dart';
+import 'package:statemanage/providers/products_provider.dart';
 import 'package:statemanage/screens/cart_screen.dart';
 import 'package:statemanage/widgets/app_drawer.dart';
 import 'package:statemanage/widgets/badge.dart';
@@ -17,7 +18,36 @@ class ProductOverviewScreen extends StatefulWidget {
 }
 
 class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
-  bool _showOnlyFavourites = false;
+  var _showOnlyFavourites = false;
+  var _isInit = true;
+  var _isLoading = false;
+
+  @override
+  void initState() {
+    // Provider.of<Products>(context).fatchAndSetProducts(); This wont work!
+    // Future.delayed(Duration.zero).then((_) {
+    //   Provider.of<Products>(context).fatchAndSetProducts();
+    // });
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    if (_isInit) {
+      setState(() {
+        _isLoading = true;
+      });
+
+      Provider.of<Products>(context).fatchAndSetProducts().then((_) {
+        setState(() {
+          _isLoading = false;
+        });
+      });
+    }
+    _isInit = false;
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
@@ -57,13 +87,17 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
                   Icons.shopping_cart,
                 ),
                 onPressed: () {
-                 Navigator.of(context) .pushNamed(CartScreen.routeName);
+                  Navigator.of(context).pushNamed(CartScreen.routeName);
                 },
               )),
         ],
       ),
       drawer: AppDrawer(),
-      body: ProductsGrid(_showOnlyFavourites),
+      body: _isLoading
+          ? Center(
+              child: CircularProgressIndicator(),
+            )
+          : ProductsGrid(_showOnlyFavourites),
     );
     return scaffold;
   }
